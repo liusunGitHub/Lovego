@@ -71,7 +71,7 @@ public class RetrofitActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected String getHeaderTitle() {
-        return null;
+        return "设置";
     }
 
 
@@ -93,7 +93,9 @@ public class RetrofitActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v == only_retrofit_BN) {
-            getMovie();
+//            getMovie();
+            Intent intent = new Intent(RetrofitActivity.this, MainActivity.class);
+            startActivity(intent);
         }else if (v == retrofit_BN){
 //            getMovieSubjectService();
             Intent intent = new Intent(RetrofitActivity.this, MovieListActivity.class);

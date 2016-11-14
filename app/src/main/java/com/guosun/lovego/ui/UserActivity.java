@@ -37,7 +37,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected String getHeaderTitle() {
-        return null;
+        return "个人中心";
     }
 
     @Override

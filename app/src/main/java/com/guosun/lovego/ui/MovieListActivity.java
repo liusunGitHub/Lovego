@@ -75,7 +75,7 @@ public class MovieListActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     protected String getHeaderTitle() {
-        return null;
+        return "电影250";
     }
 
 

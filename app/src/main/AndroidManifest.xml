@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".LovegoApplication">
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity1" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.UserActivity" >
+        </activity>
+        <activity android:name=".ui.MainActivity" >
         </activity>
         <activity android:name=".ui.HandlerActivity" >
         </activity>

@@ -9,7 +9,11 @@
         android:text="@string/app_name"
         android:padding="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:background="#29b6f6"
+        android:textColor="@android:color/white"
         android:layout_height="wrap_content" />
     <RelativeLayout
         android:id="@+id/layout_content"

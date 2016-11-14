@@ -9,14 +9,14 @@ import com.guosun.lovego.ui.BaseActivity;
 import com.guosun.lovego.ui.UserActivity;
 
 
-public class MainActivity extends BaseActivity implements View.OnClickListener{
+public class MainActivity1 extends BaseActivity implements View.OnClickListener{
 
     private TextView tv_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentLayout(R.layout.activity_main);
+        setContentLayout(R.layout.activity_main1);
         application = (LovegoApplication) this.getApplication();
         initView();
         initListener();
@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected String getHeaderTitle() {
-        return null;
+        return "首页";
     }
 
     private void initView(){
@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if(v == tv_user){
-            Intent intent = new Intent(MainActivity.this, UserActivity.class);
+            Intent intent = new Intent(MainActivity1.this, UserActivity.class);
             startActivity(intent);
         }
 

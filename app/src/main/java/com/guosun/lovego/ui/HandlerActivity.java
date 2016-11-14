@@ -53,7 +53,7 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     protected String getHeaderTitle() {
-        return null;
+        return HandlerActivity.class.getSimpleName();
     }
 
     private void initView() {
