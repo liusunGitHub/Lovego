@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.guosun.lovego.event.TestMsgEvent;
 import com.guosun.lovego.ui.BaseActivity;
 import com.guosun.lovego.ui.UserActivity;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 
 public class MainActivity1 extends BaseActivity implements View.OnClickListener{
@@ -18,8 +22,15 @@ public class MainActivity1 extends BaseActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentLayout(R.layout.activity_main1);
         application = (LovegoApplication) this.getApplication();
+        EventBus.getDefault().register(this);
         initView();
         initListener();
+    }
+
+    @Subscribe
+    public void testMsg(TestMsgEvent event){
+        tv_user.setText(event.msg);
+//        ToastUtils.ShowToast_long(event.msg);
     }
 
     @Override
@@ -46,5 +57,11 @@ public class MainActivity1 extends BaseActivity implements View.OnClickListener{
             startActivity(intent);
         }
 
+    }
+
+    @Override
+    public void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 }

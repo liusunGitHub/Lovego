@@ -12,6 +12,9 @@ import com.guosun.lovego.config.ConstsData;
 import com.guosun.lovego.domain.service.AsycGetUserInfoService;
 import com.guosun.lovego.entity.LovegoInfo;
 import com.guosun.lovego.entity.UserInfoModle;
+import com.guosun.lovego.event.TestMsgEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 
 public class UserActivity extends BaseActivity implements View.OnClickListener{
@@ -89,6 +92,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener{
     public void onClick(View v) {
         if(v == tv_title){
             Intent intent = new Intent(UserActivity.this, HandlerActivity.class);
+            EventBus.getDefault().post(new TestMsgEvent("点击跳HandlerActivity。。。"));
             startActivity(intent);
         }
     }

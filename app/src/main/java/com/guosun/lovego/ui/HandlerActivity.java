@@ -12,7 +12,10 @@ import android.widget.TextView;
 import com.guosun.lovego.LovegoApplication;
 import com.guosun.lovego.R;
 import com.guosun.lovego.entity.LovegoInfo;
+import com.guosun.lovego.event.TestMsgEvent;
 import com.guosun.lovego.util.ULog;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.concurrent.TimeUnit;
 
@@ -149,6 +152,8 @@ public class HandlerActivity extends BaseActivity implements View.OnClickListene
         if(v == tv_content2){
             Intent intent = new Intent(HandlerActivity.this, RetrofitActivity.class);
             startActivity(intent);
+            EventBus.getDefault().post(new TestMsgEvent("RetrofitActivity。。。"));
+
         }
     }
 
